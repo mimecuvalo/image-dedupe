@@ -4,6 +4,8 @@ A desktop app to find and remove duplicate images. Built with Tauri 2, React, an
 
 Scans a folder for images, identifies duplicates using a two-phase approach (fast perceptual hashing followed by precise pixel comparison), and lets you review and delete them.
 
+<img width="1312" height="912" alt="Screenshot 2026-04-04 at 21 55 40" src="https://github.com/user-attachments/assets/f41a1bbd-4ad3-4df9-8719-1961c596043b" />
+
 ## Features
 
 - **Two-phase duplicate detection** — perceptual hash pre-filter (dHash) then MSSIM pixel comparison on candidates
