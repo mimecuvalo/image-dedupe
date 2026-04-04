@@ -7,6 +7,7 @@ license = "MIT"
 repository = ""
 edition = "2021"
 rust-version = "1.88"
+default-run = "image-dedupe"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -34,3 +35,7 @@ thiserror = "2.0.18"
 uuid = { version = "1.20.0", features = ["v4"] }
 image-compare = "0.5.0"
 trash = "5.2.5"
+
+[[bin]]
+name = "bench_params"
+path = "src/bin/bench_params.rs"

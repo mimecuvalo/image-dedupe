@@ -108,9 +108,9 @@ export function useScan() {
       try {
         const groups = await invoke<DuplicateGroup[]>("scan_for_duplicates", {
           folderPath,
-          hashAlgorithm: options?.hashAlgorithm ?? "dhash",
+          hashAlgorithm: options?.hashAlgorithm ?? "blockhash",
           hammingThreshold: options?.hammingThreshold ?? 10,
-          similarityThreshold: options?.similarityThreshold ?? 0.92,
+          similarityThreshold: options?.similarityThreshold ?? 0.85,
           onProgress: channel,
         });
         setState((s) => ({

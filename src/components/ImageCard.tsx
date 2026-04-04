@@ -28,7 +28,7 @@ export function ImageCard({
 
   return (
     <div
-      className={`relative rounded-lg border-2 overflow-hidden transition-all cursor-pointer
+      className={`relative rounded-lg border-2 overflow-hidden transition-all cursor-pointer w-44
         ${previewing ? "border-blue-500 ring-2 ring-blue-300" : selected ? "border-red-500 opacity-60" : "border-gray-200 hover:border-blue-400"}`}
       onClick={() => onPreview(image)}
     >
@@ -39,7 +39,7 @@ export function ImageCard({
           </span>
         </div>
       )}
-      <div className="aspect-square bg-gray-100 flex items-center justify-center overflow-hidden">
+      <div className="h-40 bg-gray-100 flex items-center justify-center overflow-hidden">
         {thumbSrc ? (
           <img
             src={thumbSrc}
