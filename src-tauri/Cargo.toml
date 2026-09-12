@@ -39,3 +39,31 @@ trash = "5.2.5"
 [[bin]]
 name = "bench_params"
 path = "src/bin/bench_params.rs"
+
+# Tuned for maximum runtime speed; binary size and compile time are not a concern.
+[profile.release]
+opt-level = 3
+lto = "fat"          # whole-program inlining across crates (image/image_hasher/rayon)
+codegen-units = 1    # one unit => best optimization, no parallel codegen
+panic = "unwind"     # keep unwind: image decoding of a corrupt file panics, and
+                     # rayon can catch it instead of aborting the whole app
+debug = 1            # line tables only; zero runtime cost, makes Instruments useful
+incremental = false
+rpath = false
+
+# Apply the same to every dependency, including build-time-heavy image crates.
+[profile.release.package."*"]
+opt-level = 3
+codegen-units = 1
+
+# `cargo bench` / bench_params inherit release settings above.
+[profile.bench]
+inherits = "release"
+
+# Dev builds: keep our own crate fast to compile, but optimize deps so that
+# decoding/hashing in a debug run isn't unusably slow.
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
