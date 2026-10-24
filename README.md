@@ -1,4 +1,6 @@
-<img src="src-tauri/icons/128x128@2x.png" alt="Image Dedupe icon" width="128" height="128" style="image-rendering: pixelated">
+<p align="center">
+  <img src="src-tauri/icons/128x128@2x.png" alt="Image Dedupe icon" width="128" height="128" style="image-rendering: pixelated">
+</p>
 
 # Image Dedupe
 
